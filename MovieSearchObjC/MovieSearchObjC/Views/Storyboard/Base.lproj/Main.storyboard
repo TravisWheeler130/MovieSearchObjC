@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cUE-rx-tOp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movies Table View Controller-->
+        <scene sceneID="pr9-li-ekz">
+            <objects>
+                <tableViewController id="cUE-rx-tOp" customClass="TRWMoviesTableViewController" customModule="MovieSearchObjC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mBQ-wh-Gha">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ozf-ut-BMy">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="155" id="hrp-ug-Hy3" customClass="TRWMovieTableViewCell" customModule="MovieSearchObjC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="155"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrp-ug-Hy3" id="ZGY-pY-y7D">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Cs1-xN-dJv">
+                                            <rect key="frame" x="24" y="15" width="366" height="125"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(MovieTitle)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3t-ia-eXA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="73.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="xMN-L3-Ahs">
+                                                    <rect key="frame" x="0.0" y="104.5" width="366" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="(Rating)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7N-30-5Le">
+                                                            <rect key="frame" x="0.0" y="0.0" width="152" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="(Overview)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGP-bB-jvk">
+                                                            <rect key="frame" x="214" y="0.0" width="152" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s3t-ia-eXA" firstAttribute="width" secondItem="Cs1-xN-dJv" secondAttribute="width" id="pyN-8D-XvX"/>
+                                                <constraint firstItem="xMN-L3-Ahs" firstAttribute="width" secondItem="Cs1-xN-dJv" secondAttribute="width" id="y5g-5h-Fkg"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Cs1-xN-dJv" secondAttribute="bottom" constant="4" id="k7z-fG-j57"/>
+                                        <constraint firstItem="Cs1-xN-dJv" firstAttribute="top" secondItem="ZGY-pY-y7D" secondAttribute="topMargin" constant="4" id="m3B-ew-zZX"/>
+                                        <constraint firstItem="Cs1-xN-dJv" firstAttribute="leading" secondItem="ZGY-pY-y7D" secondAttribute="leadingMargin" constant="4" id="oLH-bE-4Dd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Cs1-xN-dJv" secondAttribute="trailing" constant="4" id="psD-13-nPD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cUE-rx-tOp" id="Yus-OG-EXG"/>
+                            <outlet property="delegate" destination="cUE-rx-tOp" id="dYQ-hs-OKR"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="overViewLabel" destination="RGP-bB-jvk" id="Brj-Kl-TUf"/>
+                        <outlet property="ratingLabel" destination="x7N-30-5Le" id="w1d-AE-NsV"/>
+                        <outlet property="titleLabel" destination="s3t-ia-eXA" id="mzS-mo-aXg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E2o-sU-f8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="107.8125"/>
+        </scene>
+    </scenes>
+</document>
